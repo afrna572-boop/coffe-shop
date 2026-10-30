@@ -1,13 +1,83 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Contact | Kopi Senja</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Fraunces:wght@700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Kopi Senja</title>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- External CSS -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Internal CSS (Requirement: Internal style tag) -->
+  <style>
+    .contact-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .contact-card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 35px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border: 1px solid #eaeaea;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: #2c2c2c;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #cccccc;
+      border-radius: 6px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+
+    .radio-group {
+      display: flex;
+      gap: 15px;
+      margin-top: 5px;
+    }
+
+    .error-message {
+      color: #d9534f;
+      font-size: 14px;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .submit-btn {
+      background-color: #3b2314;
+      color: #ffffff;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .submit-btn:hover {
+      background-color: #54331d;
+    }
+  </style>
 </head>
 <body>
+
+  <!-- Navigation Bar -->
   <nav>
     <a class="logo" href="index.html">Kopi Senja</a>
     <ul>
@@ -19,68 +89,128 @@
     </ul>
   </nav>
 
-  <main>
-    <h2>Hubungi kami</h2>
-    <p>Pesan meja, tanya kerja sama, atau kirim saran.</p>
+  <!-- Main Content Area -->
+  <main class="contact-container">
+    <div class="contact-card">
+      <h2 style="margin-top: 0; color: #3b2314;">Get in Touch with Us</h2>
+      <p style="color: #666666; margin-bottom: 25px;">Whether you want to reserve a table, partner with us, or simply share your thoughts, we'd love to hear from you!</p>
 
-    <form id="f" style="background-color:#fff;padding:28px;max-width:560px;margin-top:20px" onsubmit="return cek()">
-      <p><label>Nama<br>
-        <input type="text" id="nama" style="width:100%;padding:10px" placeholder="Nama lengkap"></label></p>
+      <!-- Contact Form -->
+      <form id="contactForm" onsubmit="return validateContactForm()">
+        
+        <!-- Text Input -->
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" class="form-control" placeholder="e.g. John Doe">
+        </div>
 
-      <p><label>Password<br>
-        <input type="password" id="pw" style="width:100%;padding:10px" placeholder="Minimal 6 karakter"></label></p>
+        <!-- Password Input -->
+        <div class="form-group">
+          <label for="userPassword">Account / Verification Passcode</label>
+          <input type="password" id="userPassword" class="form-control" placeholder="At least 6 characters">
+        </div>
 
-      <p>Jenis pesan:<br>
-        <label><input type="radio" name="jenis" value="Reservasi"> Reservasi</label>
-        <label><input type="radio" name="jenis" value="Saran"> Saran</label>
-        <label><input type="radio" name="jenis" value="Kerja sama"> Kerja sama</label></p>
+        <!-- Radio Buttons -->
+        <div class="form-group">
+          <label>Inquiry Type</label>
+          <div class="radio-group">
+            <label><input type="radio" name="inquiryType" value="Reservation"> Table Reservation</label>
+            <label><input type="radio" name="inquiryType" value="Feedback"> Feedback</label>
+            <label><input type="radio" name="inquiryType" value="Partnership"> Partnership</label>
+          </div>
+        </div>
 
-      <p><label>Kopi favorit<br>
-        <select id="kopi" style="padding:10px;width:100%">
-          <option value="">-- Pilih --</option>
-          <option>Espresso</option>
-          <option>Kopi Susu Senja</option>
-          <option>Cappuccino</option>
-        </select></label></p>
+        <!-- Selection Dropdown -->
+        <div class="form-group">
+          <label for="favoriteCoffee">Favorite Coffee Choice</label>
+          <select id="favoriteCoffee" class="form-control">
+            <option value="">-- Select Your Favorite Brew --</option>
+            <option value="Espresso">Classic Espresso</option>
+            <option value="Senja Milk Coffee">Senja Milk Coffee</option>
+            <option value="Cappuccino">Creamy Cappuccino</option>
+            <option value="Americano">Hot Americano</option>
+          </select>
+        </div>
 
-      <p><label>Pesan<br>
-        <textarea id="pesan" rows="4" style="width:100%;padding:10px"></textarea></label></p>
+        <!-- Text Area -->
+        <div class="form-group">
+          <label for="messageBox">Your Message</label>
+          <textarea id="messageBox" class="form-control" rows="5" placeholder="Write your message here..."></textarea>
+        </div>
 
-      <p><label><input type="checkbox" id="setuju"> Saya setuju data saya digunakan untuk membalas pesan</label></p>
+        <!-- Checkbox -->
+        <div class="form-group">
+          <label style="font-weight: normal; font-size: 14px;">
+            <input type="checkbox" id="termsAgreement"> I agree to allow Kopi Senja to store my information for response purposes.
+          </label>
+        </div>
 
-      <p id="err" style="color:#b00020;min-height:24px"></p>
-      <button type="submit" class="btn">Kirim pesan</button>
-    </form>
+        <!-- Error Notification Area -->
+        <div id="errorMessage" class="error-message"></div>
+
+        <!-- Submit Button (Inline CSS requirement demo) -->
+        <button type="submit" class="submit-btn" style="text-transform: uppercase; letter-spacing: 0.5px;">Send Message</button>
+      </form>
+    </div>
   </main>
 
+  <!-- Footer Area -->
   <footer>
-    <p>&copy; 2026 Kopi Senja. Jl. Contoh No. 12, Bekasi. Buka setiap hari 07.00-22.00.</p>
-    <p><a href="menu.html">Menu</a> | <a href="about.html">About</a> | <a href="gallery.html">Gallery</a> | <a href="contact.html">Contact</a></p>
+    <p>&copy; 2026 Kopi Senja. 12 Sample Street, Bekasi. Open daily from 07:00 AM to 10:00 PM.</p>
+    <p>
+      <a href="index.html">Home</a> | 
+      <a href="menu.html">Menu</a> | 
+      <a href="about.html">About</a> | 
+      <a href="gallery.html">Gallery</a> | 
+      <a href="contact.html">Contact</a>
+    </p>
   </footer>
 
+  <!-- Form Validation JavaScript -->
   <script>
-    function cek(){
-      var e = document.getElementById('err');
-      if(document.getElementById('nama').value.trim().length < 3){
-        e.textContent = 'Nama minimal 3 karakter.'; return false;
+    function validateContactForm() {
+      var errorElement = document.getElementById('errorMessage');
+      errorElement.textContent = '';
+
+      var fullName = document.getElementById('fullName').value.trim();
+      var password = document.getElementById('userPassword').value;
+      var inquiry = document.querySelector('input[name="inquiryType"]:checked');
+      var coffee = document.getElementById('favoriteCoffee').value;
+      var message = document.getElementById('messageBox').value.trim();
+      var agreement = document.getElementById('termsAgreement').checked;
+
+      if (fullName.length < 3) {
+        errorElement.textContent = 'Please enter your full name (minimum 3 characters).';
+        return false;
       }
-      if(document.getElementById('pw').value.length < 6){
-        e.textContent = 'Password minimal 6 karakter.'; return false;
+
+      if (password.length < 6) {
+        errorElement.textContent = 'Passcode must be at least 6 characters long.';
+        return false;
       }
-      if(!document.querySelector('input[name=jenis]:checked')){
-        e.textContent = 'Pilih jenis pesan.'; return false;
+
+      if (!inquiry) {
+        errorElement.textContent = 'Please select an inquiry type.';
+        return false;
       }
-      if(document.getElementById('kopi').value === ''){
-        e.textContent = 'Pilih kopi favorit.'; return false;
+
+      if (coffee === '') {
+        errorElement.textContent = 'Please choose your favorite coffee selection.';
+        return false;
       }
-      if(document.getElementById('pesan').value.trim().length < 10){
-        e.textContent = 'Pesan minimal 10 karakter.'; return false;
+
+      if (message.length < 10) {
+        errorElement.textContent = 'Your message must be at least 10 characters long.';
+        return false;
       }
-      if(!document.getElementById('setuju').checked){
-        e.textContent = 'Centang persetujuan dulu.'; return false;
+
+      if (!agreement) {
+        errorElement.textContent = 'You must agree to the terms before submitting.';
+        return false;
       }
-      alert('Terima kasih! Pesanmu sudah terkirim.');
-      return false;
+
+      alert('Thank you! Your message has been sent successfully.');
+      return true;
     }
   </script>
 </body>
