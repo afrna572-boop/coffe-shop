@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact | Kopi Senja</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Fraunces:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <a class="logo" href="index.html">Kopi Senja</a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Hubungi kami</h2>
+    <p>Pesan meja, tanya kerja sama, atau kirim saran.</p>
+
+    <form id="f" style="background-color:#fff;padding:28px;max-width:560px;margin-top:20px" onsubmit="return cek()">
+      <p><label>Nama<br>
+        <input type="text" id="nama" style="width:100%;padding:10px" placeholder="Nama lengkap"></label></p>
+
+      <p><label>Password<br>
+        <input type="password" id="pw" style="width:100%;padding:10px" placeholder="Minimal 6 karakter"></label></p>
+
+      <p>Jenis pesan:<br>
+        <label><input type="radio" name="jenis" value="Reservasi"> Reservasi</label>
+        <label><input type="radio" name="jenis" value="Saran"> Saran</label>
+        <label><input type="radio" name="jenis" value="Kerja sama"> Kerja sama</label></p>
+
+      <p><label>Kopi favorit<br>
+        <select id="kopi" style="padding:10px;width:100%">
+          <option value="">-- Pilih --</option>
+          <option>Espresso</option>
+          <option>Kopi Susu Senja</option>
+          <option>Cappuccino</option>
+        </select></label></p>
+
+      <p><label>Pesan<br>
+        <textarea id="pesan" rows="4" style="width:100%;padding:10px"></textarea></label></p>
+
+      <p><label><input type="checkbox" id="setuju"> Saya setuju data saya digunakan untuk membalas pesan</label></p>
+
+      <p id="err" style="color:#b00020;min-height:24px"></p>
+      <button type="submit" class="btn">Kirim pesan</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Kopi Senja. Jl. Contoh No. 12, Bekasi. Buka setiap hari 07.00-22.00.</p>
+    <p><a href="menu.html">Menu</a> | <a href="about.html">About</a> | <a href="gallery.html">Gallery</a> | <a href="contact.html">Contact</a></p>
+  </footer>
+
+  <script>
+    function cek(){
+      var e = document.getElementById('err');
+      if(document.getElementById('nama').value.trim().length < 3){
+        e.textContent = 'Nama minimal 3 karakter.'; return false;
+      }
+      if(document.getElementById('pw').value.length < 6){
+        e.textContent = 'Password minimal 6 karakter.'; return false;
+      }
+      if(!document.querySelector('input[name=jenis]:checked')){
+        e.textContent = 'Pilih jenis pesan.'; return false;
+      }
+      if(document.getElementById('kopi').value === ''){
+        e.textContent = 'Pilih kopi favorit.'; return false;
+      }
+      if(document.getElementById('pesan').value.trim().length < 10){
+        e.textContent = 'Pesan minimal 10 karakter.'; return false;
+      }
+      if(!document.getElementById('setuju').checked){
+        e.textContent = 'Centang persetujuan dulu.'; return false;
+      }
+      alert('Terima kasih! Pesanmu sudah terkirim.');
+      return false;
+    }
+  </script>
+</body>
+</html>

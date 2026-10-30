@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Menu | Kopi Senja</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Fraunces:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .menu-table{width:100%;border-collapse:collapse;background-color:#fff;margin:20px 0}
+    .menu-table th{background-color:#24402F;color:#F3F1EC;text-align:left;padding:12px;font-size:1rem}
+    .menu-table td{padding:12px;border-bottom:1px solid #ddd;height:48px}
+    .menu-table tr:hover td{background-color:#f6ead7}
+    .price{font-weight:700;text-align:right;color:#8a5a1c}
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="logo" href="index.html">Kopi Senja</a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html" class="active">Menu</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Menu</h2>
+    <p>Semua minuman bisa dipesan panas atau dingin.</p>
+
+    <table class="menu-table">
+      <thead>
+        <tr><th>Menu</th><th>Deskripsi</th><th>Harga</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Espresso</td><td>Shot tunggal, rasa pekat dan bersih</td><td class="price">Rp 18.000</td></tr>
+        <tr><td>Americano</td><td>Espresso dengan air panas</td><td class="price">Rp 22.000</td></tr>
+        <tr><td>Kopi Susu Senja</td><td>Espresso, susu segar, gula aren</td><td class="price">Rp 28.000</td></tr>
+        <tr><td>Cappuccino</td><td>Espresso dengan busa susu tebal</td><td class="price">Rp 30.000</td></tr>
+        <tr><td>Croissant</td><td>Dipanggang saat dipesan</td><td class="price">Rp 25.000</td></tr>
+      </tbody>
+    </table>
+
+    <div class="cols">
+      <div class="box">
+        <h3>Cara pesan</h3>
+        <ol class="plain">
+          <li>Pilih menu di kasir atau lewat meja</li>
+          <li>Tentukan panas atau dingin</li>
+          <li>Bayar, lalu tunggu nomor dipanggil</li>
+        </ol>
+      </div>
+      <div class="box">
+        <h3>Pilihan susu</h3>
+        <ul class="plain">
+          <li>Susu sapi segar</li>
+          <li>Susu oat</li>
+          <li>Susu almond</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Kopi Senja. Jl. Contoh No. 12, Bekasi. Buka setiap hari 07.00-22.00.</p>
+    <p><a href="menu.html">Menu</a> | <a href="about.html">About</a> | <a href="gallery.html">Gallery</a> | <a href="contact.html">Contact</a></p>
+  </footer>
+</body>
+</html>

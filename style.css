@@ -1,0 +1,93 @@
+:root{
+  --esp:#2A1A14;
+  --pine:#24402F;
+  --car:#C8893B;
+  --bg:#F3F1EC;
+  --w:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:17px;
+  line-height:1.6;
+  color:var(--esp);
+  background-color:var(--bg);
+  min-height:100vh;
+}
+h1,h2,h3{
+  font-family:'Fraunces',Georgia,serif;
+  font-weight:700;
+  letter-spacing:-.5px;
+  line-height:1.2;
+}
+h1{font-size:3.2rem}
+h2{font-size:2rem;margin-bottom:12px}
+a{color:var(--pine)}
+
+/* Navbar */
+nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 40px;
+  background-color:var(--esp);
+}
+nav .logo{
+  font-family:'Fraunces',Georgia,serif;
+  font-size:1.5rem;
+  color:var(--car);
+  text-decoration:none;
+  font-weight:700;
+}
+nav ul{display:flex;gap:26px;list-style:none}
+nav ul a{color:var(--bg);text-decoration:none;padding-bottom:4px}
+nav ul a:hover,nav ul a.active{color:var(--car);border-bottom:2px solid var(--car)}
+
+/* Layout */
+main{max-width:1000px;width:90%;margin:0 auto;padding:50px 0}
+.hero{
+  position:relative;
+  min-height:480px;
+  display:flex;
+  align-items:center;
+  padding:0 8%;
+  color:var(--bg);
+  background-image:linear-gradient(120deg,rgba(42,26,20,.92),rgba(36,64,47,.85)),
+                   radial-gradient(circle at 80% 30%,#C8893B,#2A1A14);
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+.hero p{max-width:480px;margin:16px 0 26px}
+.hero .steam{position:absolute;right:10%;bottom:40px;font-size:7rem;opacity:.25}
+.btn{
+  display:inline-block;
+  padding:12px 28px;
+  background-color:var(--car);
+  color:var(--esp);
+  font-weight:700;
+  text-decoration:none;
+  border:0;
+  border-radius:4px;
+  cursor:pointer;
+  font-size:1rem;
+}
+.btn:hover{background-color:var(--w)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px}
+.box{background-color:var(--w);padding:26px;border-left:5px solid var(--car)}
+ul.plain,ol.plain{margin:10px 0 0 22px}
+footer{
+  background-color:var(--esp);
+  color:var(--bg);
+  text-align:center;
+  padding:30px 20px;
+  font-size:.9rem;
+}
+footer a{color:var(--car)}
+@media(max-width:700px){
+  nav{flex-direction:column;gap:10px}
+  h1{font-size:2.2rem}
+}
