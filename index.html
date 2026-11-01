@@ -7,13 +7,14 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Fraunces:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    nav { position: sticky; top: 0; z-index: 10; }
-    .hero { position: relative;}
-    .steam { position: absolute; right: 24px; bottom: 16px; }
-    .box h3 { font-size: 20px; letter-spacing: 0.5px; }
     .cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-    footer { background-color: #24402F; color: #F3F1EC; }
-    </style>
+    .hero { position: relative; }
+    .steam { position: absolute; right: 24px; bottom: 16px; }
+    .box:hover { transform: translateY(-6px); transition: 0.3px; }
+    .cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .box {box-shadow: 0 2px 8 px rgba(0,0,.15);
+    @media (max-width: 800px) { .cols {grid-template-columns: repeat (2, 1fr); }  
+</style>
 </head>
 <body>
   <nav>
@@ -31,7 +32,7 @@
     <div>
       <h1>Good Coffe,<br>Good Moments.</h1>
       <p>Select beans from Gayo, Toraja, and Flores, roasted every morning and brewed fresh when you order.</p>
-      <a class="btn" href="menu.html">Lihat menu</a>
+      <a class="btn" href="menu.html">view menu</a>
     </div>
     <span class="steam">&#9749;</span>
   </header>
