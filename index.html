@@ -3,22 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Home |coffe amerta</title>
+  <title>Home | amerta coffe</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Fraunces:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    nav{position: sticky; top: 0; z-index: 10;}
-    .hero{postion: relative;}
-    .steam{position: absolute; right: 24px; bottom: 16px;}
-    .box h3{font-size: 20px; letter-spacing: 0.5px;}
-    .cols{gap: 24px;}
-    footer{background-color: #24402F; color: #F3F1EC; }
-    .steps{max-width: 600px; margin: 16px auto 0;}
+    nav { position: sticky; top: 0; z-index: 10; }
+    .hero { position: relative;}
+    .steam { position: absolute; right: 24px; bottom: 16px; }
+    .box h3 { font-size: 20px; letter-spacing: 0.5px; }
+    .cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    footer { background-color: #24402F; color: #F3F1EC; }
     </style>
 </head>
 <body>
   <nav>
-    <a class="logo" href="index.html>amerta coffe</a>
+    <a class="logo" href="index.html">amerta coffe</a>
     <ul>
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="menu.html">Menu</a></li>
@@ -30,9 +29,9 @@
 
   <header class="hero">
     <div>
-      <h1>Good coffe,<br>Better moments.</h1>
+      <h1>Good Coffe,<br>Good Moments.</h1>
       <p>Select beans from Gayo, Toraja, and Flores, roasted every morning and brewed fresh when you order.</p>
-      <a class="btn" href="menu.html">menu</a>
+      <a class="btn" href="menu.html">Lihat menu</a>
     </div>
     <span class="steam">&#9749;</span>
   </header>
@@ -49,22 +48,30 @@
         </ul>
       </div>
       <div class="box">
-        <h3>peak hours</h3>
-        <p>Mornings 07.00-10.00 for takeaway. Evenings 16.00-19.00 for hanging out.</p>
+        <h3>Peak hours</h3>
+        <ul class="plain">
+          <li>Mornings 07.00-10.00 for takeaway.</li>
+          <li>Evenings 16.00-19.00 for hanging out.</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Payment Methods</h3>
       <ul class="plain">
-        <li>cash, qris, debit card</li>
-        <li>free motorbike parking</li>
+        <li>Cash</li>
+        <li>Qris</li>
+        <li>Debit Card</li>
       </ul>
-      <div class="box" style="background-color:#24402F;color:#F3F1EC;border-left-color:#C8893B">
+      </div>
+      <div class="box">
         <h3>This month's promo</h3>
         <p>Buy 2 milk coffees, get 1 free mini croissant every Friday.</p>
       </div>
     </div>
-  </main>
+  </main>S
   
 
   <footer>
-    <p>&copy; 2026 amerta coffe. Jl. Contoh No. 12, Bekasi. Open daily 07.00-22.00.</p>
+    <p>&copy; 2026 coffe amerta. Jl. Contoh No. 12, Bekasi. Open daily 07.00-22.00.</p>
     <p><a href="menu.html">Menu</a> | <a href="about.html">About</a> | <a href="gallery.html">Gallery</a> | <a href="contact.html">Contact</a></p>
   </footer>
 </body>
